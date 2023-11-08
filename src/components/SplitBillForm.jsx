@@ -1,3 +1,5 @@
+import Button from './Button';
+
 function SplitBillForm() {
   return (
     <form className="form-split-bill">
@@ -12,7 +14,7 @@ function SplitBillForm() {
         <option>You</option>
         <option>Your friend</option>
       </select>
-      <button className="button">Split it!</button>
+      <Button>Split it!</Button>
     </form>
   );
 }

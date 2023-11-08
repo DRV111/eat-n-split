@@ -1,3 +1,5 @@
+import Button from './Button';
+
 function AddFriend({ handleOpen }) {
   return (
     <div>
@@ -6,11 +8,9 @@ function AddFriend({ handleOpen }) {
         <input type="text" />
         <label>📸Image URL</label>
         <input type="text" />
-        <button className="button">Add friend</button>
+        <Button className="button">Add friend</Button>
       </form>
-      <button onClick={() => handleOpen(false)} className="button">
-        Close
-      </button>
+      <Button onClick={() => handleOpen(false)}>Close</Button>
     </div>
   );
 }

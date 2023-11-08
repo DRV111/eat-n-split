@@ -3,6 +3,7 @@ import AddFriend from './components/AddFriend';
 import FriendList from './components/FriendList';
 import SplitBillForm from './components/SplitBillForm';
 import './index.css';
+import Button from './components/Button';
 
 const initialFriends = [
   {
@@ -38,9 +39,7 @@ function App() {
         <FriendList friends={initialFriends} />
 
         {!isOpen ? (
-          <button onClick={() => setIsOpen(true)} className="button">
-            Add friend
-          </button>
+          <Button onClick={() => setIsOpen(true)}>Add friend</Button>
         ) : (
           <AddFriend handleOpen={handleOpen} />
         )}
