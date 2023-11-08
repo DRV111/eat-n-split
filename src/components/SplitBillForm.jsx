@@ -4,15 +4,15 @@ function SplitBillForm() {
   return (
     <form className="form-split-bill">
       <label>💰Bill value</label>
-      <input />
+      <input type="text" />
       <label>👤Your expence</label>
-      <input />
+      <input type="text" />
       <label>👥Friend&apos;expence</label>
-      <input />
+      <input type="text" disabled />
       <label>🤔Who is paing the bill?</label>
       <select>
-        <option>You</option>
-        <option>Your friend</option>
+        <option value="user">You</option>
+        <option value="friend">Your friend</option>
       </select>
       <Button>Split it!</Button>
     </form>

@@ -27,22 +27,18 @@ const initialFriends = [
 ];
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  function handleOpen() {
-    if (isOpen) {
-      setIsOpen(false);
-    }
+  const [showAddForm, setShowAddForm] = useState(false);
+  function handleShowAddForm() {
+    setShowAddForm((showForm) => !showForm);
   }
   return (
     <div className="app">
       <div className="sidebar">
         <FriendList friends={initialFriends} />
-
-        {!isOpen ? (
-          <Button onClick={() => setIsOpen(true)}>Add friend</Button>
-        ) : (
-          <AddFriend handleOpen={handleOpen} />
-        )}
+        {showAddForm && <AddFriend />}
+        <Button onClick={handleShowAddForm}>
+          {showAddForm ? 'Close' : 'Add friend'}
+        </Button>
       </div>
       <SplitBillForm />
     </div>
