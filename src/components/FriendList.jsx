@@ -4,7 +4,7 @@ function FriendList({ friends }) {
   return (
     <ul>
       {friends.map((friend) => (
-        <FriendProfile key={friend.id} friend={friend} />
+        <FriendProfile friend={friend} key={friend.id} />
       ))}
     </ul>
   );
