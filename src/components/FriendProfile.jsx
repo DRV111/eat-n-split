@@ -1,8 +1,10 @@
 import Button from './Button';
 
-function FriendProfile({ friend }) {
+function FriendProfile({ friend, onSelectFriend, selectedFriend }) {
+  const isSelected = selectedFriend?.id === friend.id;
+
   return (
-    <li>
+    <li className={isSelected ? 'selected' : ''}>
       <img src={friend.image} alt={friend.name} />
       <h3>{friend.name}</h3>
       {friend.balance < 0 && (
@@ -16,7 +18,9 @@ function FriendProfile({ friend }) {
         </p>
       )}
       {friend.balance === 0 && <p>You are and {friend.name} even</p>}
-      <Button>Select</Button>
+      <Button onClick={() => onSelectFriend(friend)}>
+        {isSelected ? 'Close' : 'Select'}
+      </Button>
     </li>
   );
 }
