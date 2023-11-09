@@ -35,7 +35,7 @@ function AddFriend({ onAddFriend }) {
         type="text"
         value={photoUrl}
       />
-      <Button className="button">Add friend</Button>
+      <Button>Add friend</Button>
     </form>
   );
 }
